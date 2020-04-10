@@ -14,7 +14,7 @@ class BasketTest < ActiveSupport::TestCase
   end
 
   def complete_synced_execution(basket)
-    debug = true
+    debug = ENV['DEBUG']
     process_1, process_2 = 2.times.map do
       ForkBreak::Process.new(debug) do |breakpoints|
         breakpoints << :before_lock

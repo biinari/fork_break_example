@@ -22,3 +22,9 @@ RAILS_ENV=test rake db:create db:migrate
 ```sh
 rake test
 ```
+
+With ForkBreak debugging enabled:
+
+```sh
+DEBUG=true rake test
+```
