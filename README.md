@@ -1,24 +1,24 @@
-# README
+# ForkBreak exception raise example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a small example rails app, showcasing a use case for database locking
+that raises an exception if the model has already had an action done on it.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* postgresql (could switch out for another database. sqlite3 is not an option as we need to have multiple processes using the database concurrently)
 
-* System dependencies
+* Ruby 2.5+
 
-* Configuration
+## Setup
 
-* Database creation
+Create database and run migrations:
 
-* Database initialization
+```sh
+RAILS_ENV=test rake db:create db:migrate
+```
 
-* How to run the test suite
+## Run Tests
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+rake test
+```
